@@ -66,10 +66,17 @@ func defaultHandler(ctx context.Context, b *bot.Bot, update *models.Update) {
 		InlineKeyboard: [][]models.InlineKeyboardButton{
 			{
 				{Text: "💰买/卖", CallbackData: "button_1"},
-				{Text: "Button 2", CallbackData: "click"},
+				{Text: "💵资产", CallbackData: "click"},
 			}, {
-				{Text: "Button 3", CallbackData: "button_3"},
-			},
+				{Text: "💳我的钱包", CallbackData: "button_3"},
+				{Text: "⚙️设置", CallbackData: "button_3"},
+			},{
+				{Text: "钱包分析", CallbackData: "button_3"},
+				{Text: "刷新余额", CallbackData: "button_3"},
+			},{
+				{Text: "🎁邀请返佣", CallbackData: "button_3"},
+				{Text: "🌎Language/语言", CallbackData: "button_3"},
+			}, 
 		},
 	}
 
