@@ -17,8 +17,14 @@ func main() {
 
 	opts := []bot.Option{
 		bot.WithDefaultHandler(defaultHandler),
-		bot.WithCallbackQueryDataHandler("button", bot.MatchTypePrefix, callbackHandler),
-		bot.WithCallbackQueryDataHandler("click", bot.MatchTypePrefix, clickHandler),
+		bot.WithCallbackQueryDataHandler("asset", bot.MatchTypePrefix, callbackHandler),
+		bot.WithCallbackQueryDataHandler("buyAndSell", bot.MatchTypePrefix, clickHandler),
+		bot.WithCallbackQueryDataHandler("wallet", bot.MatchTypePrefix, clickHandler),
+		bot.WithCallbackQueryDataHandler("setting", bot.MatchTypePrefix, clickHandler),
+		bot.WithCallbackQueryDataHandler("analysis", bot.MatchTypePrefix, clickHandler),
+		bot.WithCallbackQueryDataHandler("refresh", bot.MatchTypePrefix, clickHandler),
+		bot.WithCallbackQueryDataHandler("referral", bot.MatchTypePrefix, clickHandler),
+		bot.WithCallbackQueryDataHandler("language", bot.MatchTypePrefix, clickHandler),
 	}
 
 	//b, err := bot.New(os.Getenv("EXAMPLE_TELEGRAM_BOT_TOKEN"), opts...)
@@ -65,18 +71,18 @@ func defaultHandler(ctx context.Context, b *bot.Bot, update *models.Update) {
 	kb := &models.InlineKeyboardMarkup{
 		InlineKeyboard: [][]models.InlineKeyboardButton{
 			{
-				{Text: "💰买/卖", CallbackData: "button_1"},
-				{Text: "💵资产", CallbackData: "click"},
+				{Text: "💰买/卖", CallbackData: "buyAndSell"},
+				{Text: "💵资产", CallbackData: "asset"},
 			}, {
-				{Text: "💳我的钱包", CallbackData: "button_3"},
-				{Text: "⚙️设置", CallbackData: "button_3"},
-			},{
-				{Text: "钱包分析", CallbackData: "button_3"},
-				{Text: "刷新余额", CallbackData: "button_3"},
-			},{
-				{Text: "🎁邀请返佣", CallbackData: "button_3"},
-				{Text: "🌎Language/语言", CallbackData: "button_3"},
-			}, 
+				{Text: "💳我的钱包", CallbackData: "wallet"},
+				{Text: "⚙️设置", CallbackData: "setting"},
+			}, {
+				{Text: "钱包分析", CallbackData: "analysis"},
+				{Text: "刷新余额", CallbackData: "refresh"},
+			}, {
+				{Text: "🎁邀请返佣", CallbackData: "referral"},
+				{Text: "🌎Language/语言", CallbackData: "language"},
+			},
 		},
 	}
 
