@@ -4,7 +4,7 @@ go 1.24
 
 require (
 	github.com/blocto/solana-go-sdk v1.30.0
-	github.com/go-telegram/bot v1.14.1
+	github.com/go-telegram-bot-api/telegram-bot-api/v5 v5.5.1
 )
 
 require (
